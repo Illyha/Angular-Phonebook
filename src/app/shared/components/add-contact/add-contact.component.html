@@ -1,0 +1,30 @@
+<h1 mat-dialog-title>Add Contact</h1>
+
+<mat-form-field>
+  <input matInput #contactName placeholder="Contact Name">
+</mat-form-field>
+<mat-form-field>
+  <input matInput #contactSurname placeholder="Contact Surname">
+</mat-form-field>
+<mat-form-field>
+  <input matInput #contactDate placeholder="Contact Date">
+</mat-form-field>
+<mat-form-field>
+  <input matInput #contactNik placeholder="Contact Nik">
+</mat-form-field>
+<mat-form-field>
+  <input matInput #contactNumber placeholder="Contact Number">
+</mat-form-field>
+<mat-slide-toggle #contactPopular>Popular</mat-slide-toggle>
+
+<button mat-raised-button color="primary"
+  (click)="dialogRef.close({
+    name: contactName.value,
+    surname: contactSurname.value,
+    date: contactDate.value,
+    nik: contactNik.value,
+    number: contactNumber.value,
+    popular: contactPopular.checked
+  })">Save
+</button>
+<button mat-raised-button (click)="dialogRef.close()">Cancel</button>
